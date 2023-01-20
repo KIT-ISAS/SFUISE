@@ -1,0 +1,35 @@
+anchor_path: /path/to/UTIL/dataset/util-uwb-dataset-main/dataset/flight-dataset/survey-results/anchor_const1_survey.txt
+
+topic_imu: /imu_data 
+topic_uwb: /tdoa_data 
+topic_anchor_list: none
+topic_ground_truth: /pose_data
+
+if_tdoa: true
+uwb_frequency: 447
+imu_frequency: 1000
+acc_ratio: true # if true, multiply accelerometer measurements with g
+gyro_unit: true # if true, convert unit of gyroscope measurements from deg/s to rad/s
+
+window_size: 100
+uwb_sample_coeff: 1
+imu_sample_coeff: 0.1
+control_point_fps: 10
+max_iter: 5
+n_window_calib: 5 
+offset: [-0.012, 0.001, 0.091]
+
+accel_var_inv: [27.3649, 27.3649, 27.3649]
+gyro_var_inv: [272.1853, 272.1853, 272.1853]
+bias_accel_var_inv: [2309.4688, 2309.4688, 2309.4688] 
+bias_gyro_var_inv: [37593.9849, 37593.9849, 37593.9849]
+
+w_uwb: 300 
+w_accel: 10
+w_gyro: 10
+w_bias_accel: 10
+w_bias_gyro: 10
+
+if_reject_uwb: true
+reject_uwb_thresh: 0.3 
+reject_uwb_window_width: 0.5

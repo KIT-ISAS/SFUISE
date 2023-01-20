@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sfuise</name>
+  <version>0.0.0</version>
+  
+  <description>SFUISE: Spline Fusion-Based Ultra-Wideband-Inertial State Estimation </description>
+  <license>GPLv3</license>
+  <maintainer email="kailai.li@liu.se">Kailai Li</maintainer>
+  <author email="kailai.li@liu.se">Kailai Li</author>
+  <author email="ziyu.cao@kit.com">Ziyu Cao</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+  <depend>cf_msgs</depend>
+  <depend>isas_msgs</depend>
+  <depend>sfuise_msgs</depend>
+</package>

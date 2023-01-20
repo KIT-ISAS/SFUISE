@@ -1,0 +1,37 @@
+topic_imu: /waveshare_sense_hat_b
+topic_uwb: /rtls_flares
+topic_anchor_list: /anchor_list
+topic_ground_truth: /vive/transform/tracker_1_ref
+if_tdoa: false
+uwb_frequency: 16
+imu_frequency: 84
+
+acc_ratio: false 
+gyro_unit: false 
+window_size: 100
+
+uwb_sample_coeff: 1 
+imu_sample_coeff: 1 
+
+control_point_fps: 10
+max_iter: 5
+
+n_window_calib: 50
+offset: [0.1, -0.025, 0.0]
+
+accel_var_inv: [7.8483, 7.8483, 7.8483]
+gyro_var_inv: [27.5646, 27.5646, 27.5646]
+bias_accel_var_inv: [514.9887, 514.9887, 514.9887] 
+bias_gyro_var_inv: [2950.6680, 2950.6680, 2950.6680]
+
+w_uwb: 3
+w_accel: 1 
+w_gyro: 1 
+w_bias_accel: 1 
+w_bias_gyro: 1
+
+if_reject_uwb: true
+reject_uwb_thresh: 0.25 
+reject_uwb_window_width: 0.5
+
+toa_offset: [-0.0700, 0.1539, -0.0751, 0.1409, -0.0247]

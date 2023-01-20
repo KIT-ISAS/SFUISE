@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find sfuise)/config/test.rviz"/> 
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 0 0 0 map my_frame 50"/>  
+
+    <node pkg="sfuise" type="EstimationInterface" name="EstimationInterface" output="screen">
+            <rosparam command="load" file="$(find sfuise)/config/config_test_isas-walk2.yaml"/>
+    </node>
+    
+    <node pkg="sfuise" type="SplineFusion" name="SplineFusion" output="screen">
+        <rosparam command="load" file="$(find sfuise)/config/config_test_isas-walk2.yaml"/>
+    </node>
+
+ 
+</launch>
+

@@ -1,0 +1,4 @@
+geometry_msgs/Point position
+geometry_msgs/Quaternion orientation
+geometry_msgs/Point bias_acc
+geometry_msgs/Point bias_gyro

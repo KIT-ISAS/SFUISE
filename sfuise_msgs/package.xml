@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sfuise_msgs</name>
+  <version>0.0.0</version>
+  <description>The sfuise_msgs package</description>
+
+  <maintainer email="kailai.li@liu.se">Kailai Li</maintainer>
+  <license>GPLv3</license>
+  <build_depend>geometry_msgs</build_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
