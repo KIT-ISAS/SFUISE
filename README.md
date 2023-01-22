@@ -4,7 +4,7 @@ This is the code repository of SFUISE, the first online continuous-time UWB-iner
 
 The work has been submitted to IEEE Robotics and Automation Letters (RA-L) and is currently under review. 
 
-![eval_util](https://github.com/kailaili/sfuiseRelease/blob/main/doc/util_sequences.gif)
+![eval_util](https://github.com/KIT-ISAS/SFUISE/blob/main/doc/util_sequences.gif)
 ## BibTex Citation
 ```
 @article{arXiv23_Li,
