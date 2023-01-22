@@ -1,8 +1,22 @@
 # SFUISE (Spline Fusion-Based Ultra-Wideband-Inertial State Estimation)
 ## -- Continuous-Time Ultra-Wideband-Inertial Fusion
-This is the code repository of SFUISE, a continuous-time ultrawideband-inertial fusion system. 
+This is the code repository of SFUISE, the first online continuous-time UWB-inertial state estimation system. Quaternion-based cubic B-splines are exploited for representing states continuously over time with efficient solutions to time derivatives and spatial differentiations in closed form. Based thereon, the functional core of the system, a novel sliding-window spline fitting scheme, is established with a customized implementation of LM method. 
+
+The work has been submitted to IEEE Robotics and Automation Letters (R-AL) and is currently under review. 
+
 ![eval_util](https://github.com/kailaili/sfuiseRelease/blob/main/doc/util_sequences.gif)
 ## BibTex Citation
+```
+@article{arXiv23_Li,
+ title = {{Continuous-Time Ultra-Wideband-Inertial Fusion}},
+ author = {Kailai Li and Ziyu Cao and Uwe D. Hanebeck},
+ journal = {},
+ month = {January},
+ url = {},
+ year = {2023}
+}
+```
+
 ## Dependency
 System dependencies (tested on Ubuntu 20.04)
 * [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page) (tested with Eigen 3.3.7)
