@@ -37,7 +37,7 @@ Run following commands in terminal
 roslaunch sfuise sfuise_test_util.launch
 rosbag play const1-trial1-tdoa2.bag
 ```
-* Example for running sfuise on [ISAS-Walk](https://github.com/kailaili/sfuiseRelease/tree/main/dataset):
+* Example for running sfuise on [ISAS-Walk](https://github.com/KIT-ISAS/SFUISE/tree/main/dataset):
 ```
 roslaunch sfuise sfuise_test_isas-walk1.launch
 rosbag play ISAS-Walk1.bag
