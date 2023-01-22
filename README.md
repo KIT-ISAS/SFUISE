@@ -1,6 +1,6 @@
 # SFUISE (Spline Fusion-Based Ultra-Wideband-Inertial State Estimation)
 ## -- Continuous-Time Ultra-Wideband-Inertial Fusion
-This is the code repository of SFUISE, the first online continuous-time UWB-inertial state estimation system. Quaternion-based cubic B-splines are exploited for representing states continuously over time with efficient solutions to time derivatives and spatial differentiations in closed form. Based thereon, the functional core of the system, a novel sliding-window spline fitting scheme, is established with a customized implementation of LM method. 
+This is the code repository of SFUISE, the first online continuous-time UWB-inertial state estimation system in ROS. Quaternion-based cubic B-splines are exploited for representing states continuously over time with efficient solutions to time derivatives and spatial differentiations in closed form. Based thereon, the functional core of the system, a novel sliding-window spline fitting scheme, is established with a customized implementation of LM method. 
 
 The system supports UWB-inertial fusion for both ToA and TDoA principles of ultra-wideband ranging with minimized external dependencies. See below for usage of SFUISE using public and our own recorded data sets.
 
