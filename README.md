@@ -1,20 +1,21 @@
 # SFUISE (Spline Fusion-Based Ultra-Wideband-Inertial State Estimation)
 ## -- Continuous-Time Ultra-Wideband-Inertial Fusion
-This is the code repository of SFUISE, the first online continuous-time UWB-inertial state estimation system in ROS. Quaternion-based cubic B-splines are exploited for representing states continuously over time with efficient solutions to time derivatives and spatial differentiations in closed form. Based thereon, the functional core of the system, a novel sliding-window spline fitting scheme, is established with a customized implementation of LM method. 
+This is the code repository of SFUISE, the first online continuous-time UWB-inertial state estimation system in ROS. Quaternion-based cubic B-splines are exploited to represent states continuously over time with efficient solutions to time derivatives and spatial differentiations in closed form. The functional core of the system is a novel sliding-window spline fitting scheme that is equipped with a customized implementation of LM method.
 
-The system supports UWB-inertial fusion for both ToA and TDoA principles of ultra-wideband ranging with minimized external dependencies. See below for usage of SFUISE using public and our own recorded data sets.
+The system supports UWB-inertial fusion for both ToA and TDoA principles of ultra-wideband ranging with minimized external dependencies. See below for usage of SFUISE using public and our own recorded data sets. Detailed information about the system can be found in the [paper](https://arxiv.org/abs/2301.09033) below and on [Youtube](https://www.youtube.com/watch?v=v9bbcskwPnw).
 
 The work has been submitted to IEEE Robotics and Automation Letters (RA-L) and is currently under review. 
 
 ![eval_util](https://github.com/KIT-ISAS/SFUISE/blob/main/doc/util_sequences.gif)
 ## BibTex Citation
+Thank you for citing our paper on [ArXiv](https://arxiv.org/abs/2301.09033) if you use any of this code:
 ```
 @article{arXiv23_Li,
- title = {{Continuous-Time Ultra-Wideband-Inertial Fusion}},
  author = {Kailai Li and Ziyu Cao and Uwe D. Hanebeck},
- journal = {},
+ title = {Continuous-Time Ultra-Wideband-Inertial Fusion},
+ journal = {arXiv preprint arXiv:2301.09033},
  month = {January},
- url = {},
+ url = {https://arxiv.org/abs/2301.09033},
  year = {2023}
 }
 ```
