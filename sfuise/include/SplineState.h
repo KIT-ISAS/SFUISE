@@ -257,7 +257,7 @@ class SplineState
         Eigen::Vector3d t_delta_scale[3];
         Eigen::Quaterniond q_delta_scale[3];
         Eigen::Quaterniond q_itps[4];
-        Eigen::Vector3d w_itps[3];
+        Eigen::Vector3d w_itps[4];
         Eigen::Vector4d dcoeff;
         if (J_q || J_w) {
             Eigen::Matrix<double, 3, 4> dlog_dq[3];
@@ -292,12 +292,12 @@ class SplineState
                 q_itps[3] = q_itps[2] * q_delta_scale[2];
                 *q_out = q_itps[3];
                 Eigen::Matrix4d Q_l_all[3];
-                Quater::Qleft(q_itps[1], Q_l_all[0]);
-                Quater::Qleft(q_itps[2], Q_l_all[1]);
-                Quater::Qleft(q_itps[3], Q_l_all[2]);
+                Quater::Qleft(q_itps[0], Q_l_all[0]);
+                Quater::Qleft(q_itps[1], Q_l_all[1]);
+                Quater::Qleft(q_itps[2], Q_l_all[2]);
                 for (int i = 2; i >= 0; i--) {
                     Eigen::Matrix4d Q_r_all;
-                    Quater::Qright(q_r_all[i], Q_r_all);
+                    Quater::Qright(q_r_all[i+1], Q_r_all);
                     d_X_d_dj[i].noalias() = coeff[i + 1] * Q_r_all * Q_l_all[i] * dexp_dt[i] * dlog_dq[i];
                 }
                 J_q->d_val_d_knot.resize(size_J);
@@ -324,10 +324,11 @@ class SplineState
             if (J_w) {
                 baseCoeffsWithTime<1>(p, u);
                 dcoeff = inv_dt * cumulative_blending_matrix * p;
-                w_itps[0] = 2 * dcoeff[1] * t_delta[0];
-                w_itps[1] = q_delta_scale[1].inverse() * w_itps[0] + 2 * dcoeff[2] * t_delta[1];
-                w_itps[2] = q_delta_scale[2].inverse() * w_itps[1] + 2 * dcoeff[3] * t_delta[2];
-                *w_out = w_itps[2];
+                w_itps[0].setZero();
+                w_itps[1] = 2 * dcoeff[1] * t_delta[0];
+                w_itps[2] = q_delta_scale[1].inverse() * w_itps[1] + 2 * dcoeff[2] * t_delta[1];
+                w_itps[3] = q_delta_scale[2].inverse() * w_itps[2] + 2 * dcoeff[3] * t_delta[2];
+                *w_out = w_itps[3];
                 Eigen::Matrix<double, 3, 4> drot_dq[3];
                 Quater::drot(w_itps[0], q_delta_scale[0], drot_dq[0]);
                 Quater::drot(w_itps[1], q_delta_scale[1], drot_dq[1]);
@@ -335,7 +336,7 @@ class SplineState
                 for (int i = 2; i >= 0; i--) {
                     Eigen::Matrix3d d_vel_d_dj = coeff[i + 1] * drot_dq[i] * dexp_dt[i];
                     d_vel_d_dj.noalias() += 2 * dcoeff[i + 1] * Eigen::Matrix3d::Identity();
-                    d_r_d_dj[i].noalias() = q_r_all[i].inverse().toRotationMatrix() * d_vel_d_dj * dlog_dq[i];
+                    d_r_d_dj[i].noalias() = q_r_all[i+1].inverse().toRotationMatrix() * d_vel_d_dj * dlog_dq[i];
                 }
                 J_w->d_val_d_knot.resize(size_J);
                 for (int i = 0; i < size_J; i++) {
@@ -374,10 +375,11 @@ class SplineState
                 baseCoeffsWithTime<1>(p, u);
                 dcoeff = inv_dt * cumulative_blending_matrix * p;
 
-                w_itps[0] = 2 * dcoeff[1] * t_delta[0];
-                w_itps[1] = q_delta_scale[1].inverse() * w_itps[0] + 2 * dcoeff[2] * t_delta[1];
-                w_itps[2] = q_delta_scale[2].inverse() * w_itps[1] + 2 * dcoeff[3] * t_delta[2];
-                *w_out = w_itps[2];
+                w_itps[0].setZero();
+                w_itps[1] = 2 * dcoeff[1] * t_delta[0];
+                w_itps[2] = q_delta_scale[1].inverse() * w_itps[1] + 2 * dcoeff[2] * t_delta[1];
+                w_itps[3] = q_delta_scale[2].inverse() * w_itps[2] + 2 * dcoeff[3] * t_delta[2];
+                *w_out = w_itps[3];
             }
         }
     }
