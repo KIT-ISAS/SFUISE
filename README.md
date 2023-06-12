@@ -2,22 +2,25 @@
 ## -- Continuous-Time Ultra-Wideband-Inertial Fusion
 This is the code repository of SFUISE, the first online continuous-time UWB-inertial state estimation system in ROS. Quaternion-based cubic B-splines are exploited to represent states continuously over time with efficient solutions to time derivatives and spatial differentiations in closed form. The functional core of the system is a novel sliding-window spline fitting scheme that is equipped with a customized implementation of LM method.
 
-The system supports UWB-inertial fusion for both ToA and TDoA principles of ultra-wideband ranging with minimized external dependencies. See below for usage of SFUISE using public and our own recorded data sets. Detailed information about the system can be found in the [paper](https://arxiv.org/abs/2301.09033) below and on [Youtube](https://www.youtube.com/watch?v=v9bbcskwPnw).
+The system supports UWB-inertial fusion for both ToA and TDoA principles of ultra-wideband ranging with minimized external dependencies. See below for usage of SFUISE using public and our own recorded data sets. Detailed information about the system can be found in our paper on [arXiv](https://arxiv.org/abs/2301.09033) or [IEEE](https://doi.org/10.1109/LRA.2023.3281932), and demonstrated on [Youtube](https://www.youtube.com/watch?v=v9bbcskwPnw).
 
-The work has been submitted to IEEE Robotics and Automation Letters (RA-L) and is currently under review. 
+The work has been publlished on IEEE Robotics and Automation Letters (RA-L).
 
 ![eval_util](https://github.com/KIT-ISAS/SFUISE/blob/main/doc/util_sequences.gif)
 ## BibTex Citation
-Thank you for citing our paper on [ArXiv](https://arxiv.org/abs/2301.09033) if you use any of this code:
+Thank you for citing our paper if you use any of this code:
 ```
-@article{arXiv23_Li,
- author = {Kailai Li and Ziyu Cao and Uwe D. Hanebeck},
- title = {Continuous-Time Ultra-Wideband-Inertial Fusion},
- journal = {arXiv preprint arXiv:2301.09033},
- month = {January},
- url = {https://arxiv.org/abs/2301.09033},
- year = {2023}
+@ARTICLE{RAL23_Li,
+  author={Li, Kailai and Cao, Ziyu and Hanebeck, Uwe D.},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Continuous-Time Ultra-Wideband-Inertial Fusion}, 
+  year={2023},
+  volume={8},
+  number={7},
+  pages={4338-4345},
+  doi={10.1109/LRA.2023.3281932}
 }
+
 ```
 
 ## Dependency
